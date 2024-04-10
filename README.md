@@ -4,7 +4,6 @@ rustup target add wasm32-unknown-unknown
 
 cargo install wasm-pack
 cargo install wasm-gc
-cargo install https
 ```
 
 # Build

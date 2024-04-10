@@ -5,12 +5,14 @@ pub fn add(left: u32, right: u32) -> u32 {
 
 extern {
     fn appendNumberToBody(number: u32);
+    fn alert(x: u32);
 }
 
 #[no_mangle]
 pub fn run() {
     unsafe {
         appendNumberToBody(42);
+        alert(42);
     }
 }
 
