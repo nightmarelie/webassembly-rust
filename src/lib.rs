@@ -7,17 +7,14 @@ pub fn add(left: u32, right: u32) -> u32 {
     left + right
 }
 
-#[wasm_bindgen(module = "domUtils")]
+#[wasm_bindgen(raw_module = "../domUtils.js")]
 extern {
-    fn appendNumberToBody(number: u32);
-    fn alert(x: u32);
     fn appendStringToBody(s: &str);
 }
 
 #[wasm_bindgen]
+#[no_mangle]
 pub fn run() {
-    appendNumberToBody(42);
-    alert(42);
     appendStringToBody("Hello World");
 }
 

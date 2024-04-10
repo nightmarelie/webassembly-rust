@@ -2,36 +2,7 @@
 <html lang="en">
 <head>
     <title>My App</title>
-    <!--    <script>-->
-    <!--        fetch('utils.gc.wasm')-->
-    <!--          .then(response => response.arrayBuffer())-->
-    <!--          .then(result => WebAssembly.instantiate(result))-->
-    <!--          .then(wasmModule => {-->
-    <!--            const result = wasmModule.instance.exports.add(3, 4);-->
-    <!--            const text = document.createTextNode(result);-->
-    <!--            document.body.appendChild(text);-->
-    <!--          });-->
-    <!--    </script>-->
-    <!--    <script>-->
-    <!--        WebAssembly.instantiateStreaming(fetch('utils.gc.wasm'))-->
-    <!--          .then(wasmModule => {-->
-    <!--            const result = wasmModule.instance.exports.add(3, 4);-->
-    <!--            const text = document.createTextNode(result);-->
-    <!--            document.body.appendChild(text);-->
-    <!--          });-->
-    <!--    </script>-->
-    <script>
-        const appendNumberToBody = (number) => {
-            const text = document.createTextNode(number);
-            document.body.appendChild(text);
-          };
-        const importObject = { env: { alert: alert, appendNumberToBody: appendNumberToBody }};
-
-       WebAssembly.instantiateStreaming(fetch('./utils.gc.wasm'), importObject)
-            .then(wasmModule => {
-              wasmModule.instance.exports.run();
-            });
-    </script>
+    <script src="./index.js"></script>
 </head>
 <body></body>
 </html>
