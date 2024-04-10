@@ -6,9 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-https = "1.13.2"
-wasm-gc = "0.1.6"
-wasm-pack = "0.12.1"
+getrandom = { version = "0.2", features = ["js"] }
 
 [lib]
 crate-type = ["cdylib"]
