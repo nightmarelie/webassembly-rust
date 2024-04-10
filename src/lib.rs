@@ -1,19 +1,24 @@
+extern crate wasm_bindgen;
+
+use wasm_bindgen::prelude::*;
+
 #[no_mangle]
 pub fn add(left: u32, right: u32) -> u32 {
     left + right
 }
 
+#[wasm_bindgen(module = "domUtils")]
 extern {
     fn appendNumberToBody(number: u32);
     fn alert(x: u32);
+    fn appendStringToBody(s: &str);
 }
 
-#[no_mangle]
+#[wasm_bindgen]
 pub fn run() {
-    unsafe {
-        appendNumberToBody(42);
-        alert(42);
-    }
+    appendNumberToBody(42);
+    alert(42);
+    appendStringToBody("Hello World");
 }
 
 #[cfg(test)]
