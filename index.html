@@ -2,6 +2,16 @@
 <html lang="en">
 <head>
     <title>My App</title>
+<!--    <script>-->
+<!--        fetch('utils.gc.wasm')-->
+<!--          .then(response => response.arrayBuffer())-->
+<!--          .then(result => WebAssembly.instantiate(result))-->
+<!--          .then(wasmModule => {-->
+<!--            const result = wasmModule.instance.exports.add_one(2);-->
+<!--            const text = document.createTextNode(result);-->
+<!--            document.body.appendChild(text);-->
+<!--          });-->
+<!--    </script>-->
     <script>
         WebAssembly.instantiateStreaming(fetch('utils.gc.wasm'))
           .then(wasmModule => {
