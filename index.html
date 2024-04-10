@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My App</title>
+    <script>
+        WebAssembly.instantiateStreaming(fetch('utils.gc.wasm'))
+          .then(wasmModule => {
+            const result = wasmModule.instance.exports.add(3, 4);
+            const text = document.createTextNode(result);
+            document.body.appendChild(text);
+          });
+    </script>
+</head>
+<body></body>
+</html>
